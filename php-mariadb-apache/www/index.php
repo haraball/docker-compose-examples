@@ -1,16 +1,17 @@
-<?php 
-    phpinfo(); 
+<?php
 
-    $DBSERVER = "localhost"; 
-	$DBNAME = "database";
+    $DBHOST = "db";
+    $DBPORT = "3306";
+	$DBNAME = "db1";
 	$DBUSER = "root";
 	$DBPASS = "test";
 
-    $LINK = mysqli_connect($DBSERVER, $DBUSER, $DBPASS);
-	mysqli_select_db($LINK, $DBNAME);
+    $mysqli = new mysqli($DBHOST, $DBUSER, $DBPASS, $DBNAME, $DBPORT);
 
-    $row = mysqli_query("select * `test`")->fetch_assoc();
+    $res = $mysqli->query("SELECT * FROM `test`");
+    $row = mysqli_fetch_assoc($res);
 
-    echo $row["greeting"];
+    $greeting = $row["greeting"];
+    echo "<h1>$greeting</h1>\n";
 
 ?>

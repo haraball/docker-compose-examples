@@ -1,3 +1,4 @@
-CREATE USER admin;
 CREATE DATABASE database;
-GRANT ALL PRIVILEGES ON DATABASE database TO admin;
+USE database;
+CREATE TABLE test (greeting varchar(50));
+INSERT INTO test ("Hello from the database!");
