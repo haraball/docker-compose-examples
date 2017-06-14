@@ -1,4 +1,4 @@
-CREATE DATABASE database;
-USE database;
+CREATE DATABASE db1;
+USE db1;
 CREATE TABLE test (greeting varchar(50));
-INSERT INTO test ("Hello from the database!");
+INSERT INTO test (greeting) VALUES ("Hello from the database!");
