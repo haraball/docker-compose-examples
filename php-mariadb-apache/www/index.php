@@ -2,9 +2,9 @@
 
     $DBHOST = "db";
     $DBPORT = "3306";
-	$DBNAME = "db1";
-	$DBUSER = "root";
-	$DBPASS = "test";
+    $DBNAME = "db1";
+    $DBUSER = "root";
+    $DBPASS = "test";
 
     $mysqli = new mysqli($DBHOST, $DBUSER, $DBPASS, $DBNAME, $DBPORT);
 
