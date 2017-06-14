@@ -1,0 +1,26 @@
+version: '3.2'
+
+services:
+  webserver:
+    build: ./docker/webserver
+    image: www
+    ports:
+      - "80:80"
+    volumes:
+      - ./config:/usr/local/etc/php
+      - ./www:/var/www/html
+    links:
+      - db
+      
+  db:
+    build: ./docker/db
+    image: db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: test
+      MYSQL_DATABASE: database 

@@ -1,0 +1,3 @@
+CREATE USER admin;
+CREATE DATABASE database;
+GRANT ALL PRIVILEGES ON DATABASE database TO admin;
